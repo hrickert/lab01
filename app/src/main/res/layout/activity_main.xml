@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="grupo_go_ra_ri.dam.isi.frsf.lab01.main">
+
+    <TextView
+        android:id="@+id/id_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/email"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/id_email_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:text="example@frsf.com" />
+
+    <TextView
+        android:id="@+id/id_cuit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cuit"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/id_cuit_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:text="203412312310" />
+
+    <TextView
+        android:id="@+id/id_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/amount"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/id_amount_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:text="5000" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/inversion_days"
+        android:textSize="18sp" />
+
+    <SeekBar
+        android:id="@+id/id_inversion_days"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/id_select_days"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/select_days"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_output"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/value_output"
+        android:textSize="24sp" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="@string/chekbx_renewal" />
+
+    <Button
+        android:id="@+id/id_btn_do"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="0dp"
+        android:text="@string/btn_do" />
+
+    <TextView
+        android:id="@+id/id_txt_response"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/error"
+        android:textSize="24sp"
+        android:visibility="visible"
+        tools:text="@string/response" />
+
+
+</LinearLayout>

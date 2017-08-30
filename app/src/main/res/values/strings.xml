@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Calculadora de plazo fijo</string>ç
+    <string name="app_title">Calculadora de plazo fijo</string>
+    <string name="email">Correo Electrónico</string>
+    <string name="cuit">CUIT</string>
+    <string name="amount">Importe</string>
+    <string name="select_days">0</string>
+    <string name="inversion_days">Cantidad de días de la inversión</string>
+    <string name="txt_output">Rendimiento</string>
+    <string name="value_output">$ 0</string>
+    <string name="btn_do">Hacer plazo Fijo</string>
+    <string name="chekbx_renewal">Renovación automática de vencimiento</string>
+    <string name="response">Debe completar correctamente el formulario!</string>
+</resources>
