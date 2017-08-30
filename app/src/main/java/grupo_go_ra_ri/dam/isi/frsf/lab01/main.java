@@ -20,7 +20,7 @@ public class main extends AppCompatActivity {
             public void onClick(View v) {
                 TextView txt_response = (TextView)findViewById(R.id.id_txt_response);
                 //txt_response.setVisibility(View.VISIBLE);
-                txt_response.setTextColor(getResources().getColor(R.color.ok));
+                //txt_response.setTextColor(getResources().getColor(R.color.ok));
 
                 //if (1==0) {
                 //    txt_response.setText("Plazo fijo realizado. Recibirá 5000 al vencimiento.");
