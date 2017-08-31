@@ -19,8 +19,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textEmailAddress"
-        android:text="example@frsf.com" />
+        android:hint="example@frsf.com"
+        android:inputType="textEmailAddress" />
 
     <TextView
         android:id="@+id/id_cuit"
@@ -34,8 +34,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="number"
-        android:text="203412312310" />
+        android:hint="203412312310"
+        android:inputType="number" />
 
     <TextView
         android:id="@+id/id_amount"
@@ -49,8 +49,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="number"
-        android:text="5000" />
+        android:hint="5000"
+        android:inputType="number" />
 
     <TextView
         android:id="@+id/textView8"
@@ -84,6 +84,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/value_output"
+        android:textAlignment="center"
         android:textSize="24sp" />
 
     <CheckBox
@@ -104,10 +105,9 @@
         android:id="@+id/id_txt_response"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="@string/response"
         android:textColor="@color/error"
-        android:textSize="24sp"
-        android:visibility="visible"
-        tools:text="@string/response" />
+        android:textSize="24sp" />
 
 
 </LinearLayout>
