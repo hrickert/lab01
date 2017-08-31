@@ -1,3 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <float name="0_5000_<30">25</float>
+    <float name="0_5000_>=30">27.5</float>
+    <float name="5000_999999_<30">30</float>
+    <float name="5000_999999_>=30">32.3</float>
+    <float name="99999_more_<30">35</float>
+    <float name="99999_more_>=30">38.5</float>
 </resources>
