@@ -80,7 +80,7 @@
         android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/id_output"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/value_output"
@@ -107,7 +107,8 @@
         android:layout_height="wrap_content"
         android:text="@string/response"
         android:textColor="@color/error"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:visibility="invisible" />
 
 
 </LinearLayout>
