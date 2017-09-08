@@ -2,10 +2,13 @@ package grupo_go_ra_ri.dam.isi.frsf.lab01;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
@@ -34,6 +37,7 @@ public class main extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar arg0) {
+                set_output();
             }
 
             @Override
@@ -42,7 +46,23 @@ public class main extends AppCompatActivity {
             }
         });
 
+        EditText amount_txt = (EditText)findViewById(R.id.id_amount_txt);
+        amount_txt.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                set_output();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
 
         Button btn_do = (Button)findViewById(R.id.id_btn_do);
         btn_do.setOnClickListener(new View.OnClickListener() {
@@ -55,15 +75,15 @@ public class main extends AppCompatActivity {
 
                 int amount = Integer.parseInt(amount_txt.getText().toString());
                 int days = Integer.parseInt(selectDays.getText().toString());
-                int rate = 1;
+                float rate = 1;
                 if(!TextUtils.isEmpty(email_txt.getText())&& !TextUtils.isEmpty(cuit_txt.getText()) &&
                         !TextUtils.isEmpty(amount_txt.getText())) {
 
                     rate = tasa(amount,days);
 
-                    double total = amount*(Math.pow((1+(rate/100)), 1)-1);
+                    double total = Math.round(amount*(Math.pow((1+(rate/100)),(Math.PI/360))-1));
 
-                    txt_response.setText("Plazo fijo realizado. Recibirá "+total+" al vencimiento.");
+                    txt_response.setText("Plazo fijo realizado. Recibirá $"+(total+amount)+" al vencimiento.");
                     txt_response.setTextColor(getResources().getColor(R.color.ok));
                     txt_response.setVisibility(View.VISIBLE);
                 }
@@ -77,15 +97,36 @@ public class main extends AppCompatActivity {
         });
     }
 
-    private int tasa (int monto, int dias){
+    private void set_output () {
+        TextView amount_txt = (TextView) findViewById(R.id.id_amount_txt);
+        int amount = (!TextUtils.isEmpty(amount_txt.getText()))? Integer.parseInt(amount_txt.getText().toString()) : 0;
+        TextView selectDays = (TextView) findViewById(R.id.id_select_days);
+        TextView output = (TextView) findViewById(R.id.id_output);
+        int days = Integer.parseInt(selectDays.getText().toString());
+        float rate = 1;
+        rate = tasa(amount, days);
+        double total = Math.round(amount * (Math.pow((1 + (rate / 100)), (Math.PI / 360)) - 1));
+        output.setText("$"+total);
+    }
+
+    private float tasa (int monto, int dias){
         if (monto < 5000) {
-            return (dias < 30)? Integer.valueOf(R.string._0_5000_min30) : R.string._0_5000_mayeq30;
+            float _0_5000_min30 = Float.parseFloat(getResources().getString(R.string._0_5000_min30));
+            float _0_5000_mayeq30 = Float.parseFloat(getResources().getString(R.string._0_5000_mayeq30));
+
+            return (dias < 30)? _0_5000_min30 : _0_5000_mayeq30;
         }
         else if (monto < 99999) {
-            return (dias < 30)? R.string._5000_999999_min30 : R.string._5000_999999_mayeq30;
+            float _5000_999999_min30 = Float.parseFloat(getResources().getString(R.string._5000_999999_min30));
+            float _5000_999999_mayeq30 = Float.parseFloat(getResources().getString(R.string._5000_999999_mayeq30));
+
+            return (dias < 30)? _5000_999999_min30 : _5000_999999_mayeq30;
         }
         else {
-            return (dias < 30)? R.string._99999_more_min30 : R.string._99999_more_mayeq30;
+            float _99999_more_min30 = Float.parseFloat(getResources().getString(R.string._99999_more_min30));
+            float _99999_more_mayeq30 = Float.parseFloat(getResources().getString(R.string._99999_more_mayeq30));
+
+            return (dias < 30)? _99999_more_min30 : _99999_more_mayeq30;
         }
     }
 }

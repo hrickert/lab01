@@ -50,7 +50,9 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="5000"
-        android:inputType="number" />
+        android:inputType="number"
+        android:selectAllOnFocus="false"
+        android:singleLine="false" />
 
     <TextView
         android:id="@+id/textView8"
